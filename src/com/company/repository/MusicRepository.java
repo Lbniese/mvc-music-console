@@ -2,34 +2,27 @@ package com.company.repository;
 
 import com.company.model.Music;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicRepository implements IMusicRepository {
 
-    Music music;
+    //Music music;
+    List<Music> musicList;
 
     public MusicRepository() {
-        music = new Music();
-        music.setName("Say Something Remix");
-        music.setSongId("10");
+        //music = new Music();
+        //music.setName("Say Something Remix");
+        //music.setSongId("10");
+
+        musicList = new ArrayList<>();
+        musicList.add(new Music(0,"Say Something (Remix)"));
+        musicList.add(new Music(1,"Pump It Up"));
+        musicList.add(new Music(2,"Alors on Danse"));
+
     }
 
-
-    @Override
-    public String getName() {
-        return music.getName();
-    }
-
-    @Override
-    public String getSongId() {
-        return music.getSongId();
-    }
-
-    @Override
-    public void setName(String name) {
-        music.setName(name);
-    }
-
-    @Override
-    public void setSongId(String songId) {
-        music.setSongId(songId);
+    public Music getMusic(int id) {
+        return musicList.get(id);
     }
 }

@@ -2,15 +2,20 @@ package com.company.model;
 
 public class Music {
 
-    private String songId;
+    private int musicId;
     private String name;
 
-    public String getSongId() {
-        return songId;
+    public Music(int musicId, String name) {
+        this.musicId = musicId;
+        this.name = name;
     }
 
-    public void setSongId(String songId) {
-        this.songId = songId;
+    public int getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(int musicId) {
+        this.musicId = musicId;
     }
 
     public String getName() {

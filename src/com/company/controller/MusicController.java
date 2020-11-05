@@ -13,23 +13,7 @@ public class MusicController {
         this.view = view;
     }
 
-    public void setMusicName(String name) {
-        model.setName(name);
-    }
-
-    public String getMusicName() {
-        return model.getName();
-    }
-
-    public void setMusicSongId(String songId) {
-        model.setSongId(songId);
-    }
-
-    public String getMusicSongId() {
-        return model.getSongId();
-    }
-
-    public void updateView() {
-        view.printMusicDetails(model.getName(), model.getSongId());
+    public void updateView(int id) {
+        view.printMusicDetails(model.getMusic(id));
     }
 }

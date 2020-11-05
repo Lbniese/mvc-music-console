@@ -14,16 +14,18 @@ public class Main {
         MusicController controller = new MusicController(model, view);
 
         // eventloop
-        controller.updateView();
-        controller.setMusicName("Say Something (Original)");
-        controller.updateView();
-    }
+        controller.updateView(1);
 
-    private static Music retrieveMusicFromDatabase() {
-        Music music = new Music();
-        music.setName("Say Something (Remix)");
-        music.setSongId("10");
-        return music;
-    }
+        boolean eventLoop = true;
+        while (eventLoop) {
+            int x = view.getNewMusic();
+            if (x != -1) {
+                controller.updateView(x);
+            } else {
+                eventLoop = false;
+            }
 
+        }
+
+    }
 }
